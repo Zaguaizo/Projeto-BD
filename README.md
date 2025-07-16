@@ -25,7 +25,8 @@ Lombok (para código mais limpo)
   
 1. Banco de Dados (PostgreSQL)
 Crie um banco de dados chamado locadora_filmes no PostgreSQL.
-Execute os scripts SQL abaixo para criar as tabelas. Você pode usar o pgAdmin ou qualquer cliente SQL.
+Execute os scripts SQL abaixo para criar as tabelas.
+Você pode usar o pgAdmin ou qualquer cliente SQL.
 -------------------------------------------------------------------------------
 
 -- Tabela Clientes
@@ -63,6 +64,7 @@ CREATE TABLE Locacoes (
 -------------------------------------------------------------------------------
 
 2. Configuração da Aplicação
+
 Abra o projeto na sua IDE favorita (IntelliJ IDEA, VS Code, Eclipse).
 Vá para src/main/resources/application.properties.
 Atualize as credenciais do seu banco de dados:
@@ -82,5 +84,6 @@ spring.jpa.properties.hibernate.format_sql=true
 -----------------------------------------------------------------------------------------
 
 3. Rodar
+
 Execute a classe principal LocadoraAppApplication.java diretamente da sua IDE.
 Um menu interativo aparecerá no terminal para você gerenciar os dados da locadora.
