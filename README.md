@@ -8,6 +8,7 @@ Ele usa Spring Boot e Spring Data JPA para persistência de dados com PostgreSQL
 O objetivo é demonstrar operações CRUD (Criar, Ler, Atualizar, Deletar) para Clientes, Filmes e Locações.
 
   # Funcionalidades
+  
 Gerenciamento completo (CRUD) de Clientes.
 Gerenciamento completo (CRUD) de Filmes (incluindo busca por gênero e controle de estoque).
 Gerenciamento completo (CRUD) de Locações (registro, devolução, listagem de pendentes).
@@ -26,6 +27,7 @@ Lombok (para código mais limpo)
 Crie um banco de dados chamado locadora_filmes no PostgreSQL.
 Execute os scripts SQL abaixo para criar as tabelas. Você pode usar o pgAdmin ou qualquer cliente SQL.
 -------------------------------------------------------------------------------
+
 -- Tabela Clientes
 CREATE TABLE Clientes (
     cliente_id SERIAL PRIMARY KEY,
@@ -57,6 +59,7 @@ CREATE TABLE Locacoes (
     FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id) ON DELETE CASCADE,
     FOREIGN KEY (filme_id) REFERENCES Filmes(filme_id) ON DELETE RESTRICT
 );
+
 -------------------------------------------------------------------------------
 
 2. Configuração da Aplicação
@@ -65,14 +68,17 @@ Vá para src/main/resources/application.properties.
 Atualize as credenciais do seu banco de dados:
 
 -----------------------------------------------------------------------------------------
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/locadora_filmes
 spring.datasource.username=seu_usuario_postgres
 spring.datasource.password=sua_senha_postgres
-
 spring.jpa.hibernate.ddl-auto=update
-# Para não mostrar o SQL do Hibernate no console, mantenha as linhas abaixo comentadas:
-# spring.jpa.show-sql=true
-# spring.jpa.properties.hibernate.format_sql=true
+
+##Para não mostrar o SQL do Hibernate no console, mantenha as linhas abaixo comentadas:
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
 -----------------------------------------------------------------------------------------
 
 3. Rodar
